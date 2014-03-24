@@ -1,0 +1,49 @@
+{
+    "name": "grunt-init-phonegap",
+    "description": "A grunt-init template that simplifies the process of setting up a PhoneGap mobile application development environment. It sets up creation of the application and PhoneGap/Cordova plugins managment using PhoneGrunt, and sets up the development environment for JavaScript code linting using grunt-contrib-jshint and Jasmine testing using grunt-contrib-jasmine.",
+    "version": "0.1.0",
+    "homepage": "https://github.com/realog32/grunt-init-phonegap",
+    "author": {
+        "name": "Ogom Okafor",
+        "email": "realog32@ogomand.com",
+        "url": "http://ogomand.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/realog32/grunt-init-phonegap.git"
+    },
+    "bugs": {
+        "url": "https://github.com/realog32/grunt-init-phonegap/issues"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/realog32/grunt-init-phonegap/blob/master/LICENSE-MIT"
+        }
+    ],
+    "main": "template.js",
+    "engines": {
+        "node": ">= 0.8.0"
+    },
+    "scripts": {
+        "test": "grunt test"
+    },
+    "dependencies": {
+        "lodash": "~2.4.1"
+    },
+    "devDependencies": {
+        "grunt-contrib-jshint": "~0.6.0",
+        "grunt-contrib-clean": "~0.4.0",
+        "grunt-contrib-nodeunit": "~0.2.0",
+        "grunt": "~0.4.2"
+    },
+    "peerDependencies": {
+        "grunt": "~0.4.2"
+    },
+    "keywords": [
+        "grunt-init",
+        "template",
+        "PhoneGap",
+        "PhoneGrunt"
+    ]
+}

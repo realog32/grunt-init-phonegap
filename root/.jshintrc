@@ -1,0 +1,26 @@
+{
+    "curly": true,
+    "eqeqeq": true,
+    "immed": true,
+    "latedef": true,
+    "newcap": true,
+    "noarg": true,
+    "sub": true,
+    "undef": true,
+    "boss": true,
+    "eqnull": true,
+    "node": true,
+    "globals": {
+        "afterEach": true,
+        "app": true,
+        "beforeEach": true,
+        "defined": true,
+        "describe": true,
+        "document": true,
+        "expect": true,
+        "helper": true,
+        "it": true,
+        "spyOn": true,
+        "window": true
+    }
+}

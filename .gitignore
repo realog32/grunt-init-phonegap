@@ -1,0 +1,7 @@
+.project
+.settings
+grunt-init-phonegap.sublime-project
+grunt-init-phonegap.sublime-workspace
+node_modules
+npm-debug.log
+tmp
