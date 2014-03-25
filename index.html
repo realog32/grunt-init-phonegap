@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640" />
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen"/>
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)"/>
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>Grunt-init-PhoneGap by realog32</title>
+  </head>
+
+  <body>
+    <a id="forkme_banner" href="https://github.com/realog32/grunt-init-phonegap">View on GitHub</a>
+    <div class="shell">
+
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Grunt-init-PhoneGap</h1>
+            <h2>A grunt-init template that simplifies the process of setting up a PhoneGap mobile application development environment.</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/realog32/grunt-init-phonegap/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/realog32/grunt-init-phonegap/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <h1>
+<a name="grunt-init-phonegap" class="anchor" href="#grunt-init-phonegap"><span class="octicon octicon-link"></span></a>grunt-init-phonegap</h1>
+
+<blockquote>
+<p>It sets up creation of the application and PhoneGap/Cordova plugins managment using <a href="http://realog32.github.io/phonegrunt">PhoneGrunt</a>, JavaScript code linting using <a href="https://github.com/gruntjs/grunt-contrib-jshint">grunt-contrib-jshint</a> and Jasmine testing using <a href="https://github.com/gruntjs/grunt-contrib-jasmine">grunt-contrib-jasmine</a>.</p>
+</blockquote>
+
+<h2>
+<a name="getting-started" class="anchor" href="#getting-started"><span class="octicon octicon-link"></span></a>Getting Started</h2>
+
+<p>If you haven't done so, please install <a href="http://gruntjs.com/project-scaffolding#installation">grunt-init</a>.
+Also install any SDKs and build tools needed for compiling the mobile operating systems you want your PhoneGap application to support.</p>
+
+<p>Once these are installed, place this template in your <code>~/.grunt-init/</code> directory <code>(%USERPROFILE%\.grunt-init\ on Windows)</code>. It is recommended that you use git to clone this template into that directory, as follows:</p>
+
+<pre lang="shell"><code>$ git clone https://github.com/realog32/grunt-init-phonegap.git ~/.grunt-init/phonegapdev
+</code></pre>
+
+<h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>At the command line, cd into an empty directory, run the command below and follow the prompts. Your PhoneGap application and dev environment will be created in the directory. Existing files may be overwritten.</p>
+
+<pre lang="shell"><code>$ grunt-init phonegapdev
+</code></pre>
+
+<p>After the application files are generated, install dependencies via <em>npm</em> (It may take a while to download all packages):</p>
+
+<pre lang="shell"><code>$ npm install
+</code></pre>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>After all dependencies are downloaded, you are now ready to build your application using <em>grunt</em>. The default task lints task files using <a href="https://github.com/gruntjs/grunt-contrib-jshint">jshint</a>, generates and configures the PhoneGap application based on your specifications using <a href="http://realog32.github.io/phonegrunt">PhoneGrunt</a>, and tests the mobile application using <a href="https://github.com/gruntjs/grunt-contrib-jasmine">Jasmine</a>.</p>
+
+<p>The following command runs all tasks:</p>
+
+<pre lang="shell"><code>$ grunt
+</code></pre>
+
+<p>Alternatively, the following development tasks may be run individually:</p>
+
+<h3>
+<a name="phonegrunt-build-tasks" class="anchor" href="#phonegrunt-build-tasks"><span class="octicon octicon-link"></span></a>PhoneGrunt build tasks</h3>
+
+<pre lang="shell"><code>$ grunt phonegrunt
+</code></pre>
+
+<p>or to run phonegrunt for a specific target when multiple targets are defined:</p>
+
+<pre lang="shell"><code>$ grunt phonegrunt:hellophonegap
+</code></pre>
+
+<p>In the above example, <em>hellophonegap</em> is the PhoneGap build target generated for your application by the grunt-init-phonegap template. An example configuration for the PhoneGap build target can be seen in the snippet just below. The <em>init</em> and <em>build</em> properties define how your mobile application should be initialized and configured.
+The main class for this configuration shown below would be <em>platforms/android/src/com/hellophonegap/app/HelloPhonegap.java</em>. The cordova device, battery-status, and camera plugins will be added to the build while the geolocation plugin will be removed (if it exists) from the build. Please refer to the <a href="http://realog32.github.io/phonegrunt">PhoneGrunt</a> documentation for complete details.</p>
+
+<div class="highlight highlight-js"><pre><span class="c1">// Project configuration.</span>
+<span class="nx">grunt</span><span class="p">.</span><span class="nx">initConfig</span><span class="p">({</span>
+
+    <span class="nx">phonegrunt</span><span class="o">:</span> <span class="p">{</span>
+
+        <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
+
+        <span class="p">},</span>
+        <span class="nx">hellophonegap</span><span class="o">:</span> <span class="p">{</span>
+
+            <span class="nx">init</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">name</span><span class="o">:</span> <span class="s1">'HelloPhonegap'</span><span class="p">,</span> <span class="c1">// Your mobile application project name</span>
+                <span class="kr">package</span><span class="o">:</span> <span class="s1">'com.example.hellophonegap'</span><span class="p">,</span> <span class="c1">// Application package namespace</span>
+                <span class="nx">target_os</span><span class="o">:</span> <span class="p">[</span><span class="s2">"android"</span><span class="p">]</span> <span class="c1">// Target operating system(s)</span>
+            <span class="p">},</span>
+
+            <span class="nx">build</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">local</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">plugins</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">add</span><span class="o">:</span> <span class="p">[</span><span class="s2">"device"</span><span class="p">,</span><span class="s2">"battery-status"</span><span class="p">,</span><span class="s2">"camera"</span><span class="p">],</span>
+                        <span class="nx">remove</span><span class="o">:</span> <span class="p">[</span><span class="s2">"geolocation"</span><span class="p">]</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">},</span>
+        <span class="p">},</span>
+        <span class="nx">anotherTarget</span><span class="o">:</span> <span class="p">{</span>
+        <span class="p">.</span> <span class="c1">// multiple targets</span>
+        <span class="p">.</span> <span class="c1">// can be </span>
+        <span class="p">.</span> <span class="c1">// defined here</span>
+    <span class="p">}</span>
+    <span class="p">.</span>
+    <span class="p">.</span>
+    <span class="p">.</span>
+</pre></div>
+
+<p>Plugins for the configuration above can be added or removed to an existing build by simply running:</p>
+
+<pre lang="shell"><code>$ grunt phonegrunt:hellophonegap:build
+</code></pre>
+
+<h3>
+<a name="lint-task-jshint" class="anchor" href="#lint-task-jshint"><span class="octicon octicon-link"></span></a>Lint task (JSHint)</h3>
+
+<pre lang="shell"><code>$ grunt jshint
+</code></pre>
+
+<p>This will lint files configured in the jshint task in the generated Gruntfile.js. Please refer to the <a href="https://github.com/gruntjs/grunt-contrib-jshint">grunt-contrib-jshint</a> plugin for configuration details for this task.
+Below is an example of the default configuration for an android application:</p>
+
+<div class="highlight highlight-js"><pre><span class="c1">// Project configuration.</span>
+<span class="nx">grunt</span><span class="p">.</span><span class="nx">initConfig</span><span class="p">({</span>
+
+    <span class="nx">jshint</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">all</span><span class="o">:</span> <span class="p">[</span>
+            <span class="s1">'Gruntfile.js'</span><span class="p">,</span> <span class="c1">// This gruntfile.</span>
+            <span class="s1">'tasks/*.js'</span><span class="p">,</span> <span class="c1">// Generated PhoneGap build tasks and any user-defined tasks.</span>
+            <span class="s1">'test/jasmine/**/*.js'</span><span class="p">,</span> <span class="c1">// Jasmine test scripts.</span>
+            <span class="p">[</span><span class="s1">'platforms/android/assets/www/js/**/*.js'</span><span class="p">,],</span> <span class="c1">// PhoneGap application JS files.</span>
+        <span class="p">],</span>
+        <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">jshintrc</span><span class="o">:</span> <span class="s1">'.jshintrc'</span><span class="p">,</span> <span class="c1">// configuartion options for jshint</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+    <span class="p">.</span>
+    <span class="p">.</span>
+    <span class="p">.</span>
+</pre></div>
+
+<h3>
+<a name="jamine-test-task" class="anchor" href="#jamine-test-task"><span class="octicon octicon-link"></span></a>Jamine test task</h3>
+
+<pre lang="shell"><code>$ grunt jasmine
+</code></pre>
+
+<p>This will run the Jasmine tests in the assets/www/specs directory of each supported operating system. Please refer to <a href="https://github.com/gruntjs/grunt-contrib-jasmine">grunt-contrib-jasmine</a> plugin for configuration options.</p>
+
+<h2>
+<a name="support" class="anchor" href="#support"><span class="octicon octicon-link"></span></a>Support</h2>
+
+<p>Please report any issues <a href="%7B%=bugs%%7D">here</a> and feel absolutely welcome to fork and submit pull requests.</p>
+
+<h2>
+<a name="contributing" class="anchor" href="#contributing"><span class="octicon octicon-link"></span></a>Contributing</h2>
+
+<p>In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using <a href="http://gruntjs.com/">Grunt</a>.</p>
+
+<h2>
+<a name="acknowledgments" class="anchor" href="#acknowledgments"><span class="octicon octicon-link"></span></a>Acknowledgments</h2>
+
+<p>This effort is inspired by the awesome <a href="https://github.com/gruntjs/grunt-init-gruntplugin">grunt-init-gruntplugin</a>. Many thanks to Ben Alman and his fellow contributors for making it all seem so simple.</p>
+
+<h2>
+<a name="release-history" class="anchor" href="#release-history"><span class="octicon octicon-link"></span></a>Release History</h2>
+
+<p><em>(Initial Release)</em></p>
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/realog32">realog32</a> can be found on <a href="https://github.com/realog32/grunt-init-phonegap">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-49322226-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
