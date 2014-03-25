@@ -138,7 +138,7 @@ grunt.initConfig({
 $ grunt jasmine
 ```
 
-This will run the Jasmine tests in the test/jasmine/specs directory. Please refer to [grunt-contrib-jasmine][Jasmine] plugin for configuration options.
+This will run the Jasmine tests in the assets/www/specs directory of each supported operating system. Please refer to [grunt-contrib-jasmine][Jasmine] plugin for configuration options.
 
 
 ## Support
@@ -150,7 +150,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 
 ## Acknowledgments
-This effort is inspired by the awesome [grunt-init-gruntplugin][https://github.com/gruntjs/grunt-init-gruntplugin]. Many thanks to Ben Alman and his fellow contributors for making it all seem so simple.
+This effort is inspired by the awesome [grunt-init-gruntplugin](https://github.com/gruntjs/grunt-init-gruntplugin). Many thanks to Ben Alman and his fellow contributors for making it all seem so simple.
 
 
 ## Release History
